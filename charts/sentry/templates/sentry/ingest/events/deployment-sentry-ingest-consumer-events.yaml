@@ -162,6 +162,9 @@ spec:
 {{- if .Values.sentry.ingestConsumerEvents.sidecars }}
 {{ toYaml .Values.sentry.ingestConsumerEvents.sidecars | indent 6 }}
 {{- end }}
+{{- if .Values.global.sidecars }}
+{{ toYaml .Values.global.sidecars | indent 6 }}
+{{- end }}
       {{- if .Values.serviceAccount.enabled }}
       serviceAccountName: {{ .Values.serviceAccount.name }}-ingest-consumer-events
       {{- end }}
@@ -189,7 +192,10 @@ spec:
 {{- if .Values.sentry.ingestConsumerEvents.volumes }}
 {{ toYaml .Values.sentry.ingestConsumerEvents.volumes | indent 6 }}
 {{- end }}
-      {{- if .Values.sentry.ingestConsumerEvents.priorityClassName }}
-      priorityClassName: "{{ .Values.sentry.ingestConsumerEvents.priorityClassName }}"
+{{- if .Values.global.volumes }}
+{{ toYaml .Values.global.volumes | indent 6 }}
+{{- end }}
+      {{- if .Values.sentry.ingestConsumer.priorityClassName }}
+      priorityClassName: "{{ .Values.sentry.ingestConsumer.priorityClassName }}"
       {{- end }}
 {{- end }}
