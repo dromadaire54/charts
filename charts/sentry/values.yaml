@@ -6,6 +6,8 @@ ipv6: false
 global:
   nodeSelector: {}
   tolerations: []
+  sidecars: []
+  volumes: []
 
 user:
   create: true
@@ -23,11 +25,6 @@ user:
 # as you will have some downtime on each update if it's a hook
 # deploys relay & snuba consumers as post hooks
 asHook: true
-
-# Global parameter for all deployments
-global:
-  sidecars: []
-  volumes: []
 
 images:
   sentry:
