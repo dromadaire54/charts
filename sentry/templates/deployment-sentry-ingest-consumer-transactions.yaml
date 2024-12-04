@@ -155,7 +155,7 @@ spec:
 {{- if .Values.global.volumes }}
 {{ toYaml .Values.global.volumes | indent 6 }}
 {{- end }}
-      {{- if .Values.sentry.ingestConsumer.priorityClassName }}
-      priorityClassName: "{{ .Values.sentry.ingestConsumer.priorityClassName }}"
+      {{- if .Values.sentry.ingestConsumerEvents.priorityClassName }}
+      priorityClassName: "{{ .Values.sentry.ingestConsumerEvents.priorityClassName }}"
       {{- end }}
 {{- end }}
