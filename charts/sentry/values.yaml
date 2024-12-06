@@ -446,6 +446,8 @@ sentry:
     # concurrency: 4
     env: []
     resources: {}
+    sidecars: []
+    volumes: []
     #  requests:
     #    cpu: 200m
     #    memory: 500Mi
